@@ -12,7 +12,7 @@ This project implements an **abstractive text summarization model** using Huggin
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - Python
 - PyTorch
 - Hugging Face Transformers
@@ -26,24 +26,14 @@ Run the following commands:
 ```bash
 pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.0 --extra-index-url https://download.pytorch.org/whl/cu118
 pip install transformers
+pip install huggingface-hub==0.30.0
 ````
 
 ---
 
 ## Usage
 
-```python
-from transformers import pipeline
-
-def summarize_text(text, max_length=130, min_length=30):
-    summarizer = pipeline(
-        'summarization',
-        model='facebook/bart-large-cnn',
-        tokenizer='facebook/bart-large-cnn'
-    )
-    summary = summarizer(text, max_length=max_length, min_length=min_length, do_sample=False)
-    return summary[0]['summary_text']
-```
+Run `` summarise.py ``
 
 ---
 
@@ -51,14 +41,13 @@ def summarize_text(text, max_length=130, min_length=30):
 
 **Input:**
 
-```
-The Eiffel Tower is a wrought-iron lattice tower...
-```
+The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It was named after the engineer Gustave Eiffel, whose company designed and built the structure. The tower was completed in 1889 and was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognizable structures in the world. The Eiffel Tower is the most-visited paid monument in the world, with millions of people ascending it every year.
+
 
 **Output:**
 
-```
-The Eiffel Tower is a wrought-iron lattice tower in Paris, France...
-```
+
+The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. The tower was completed in 1889 and was initially criticized by some of France's leading artists and intellectuals for its design.
+
 
 ---

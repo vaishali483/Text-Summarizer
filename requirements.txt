@@ -2,3 +2,4 @@ torch
 torchvision
 torchaudio
 transformers
+huggingface-hub==0.30.0
